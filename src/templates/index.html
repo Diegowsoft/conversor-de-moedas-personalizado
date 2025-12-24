@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <section class="conversor">
+        <h1>Conversor de Moedas</h1>
+        <form action="/converter" method="POST">
+
+            <label for="valor">Valor: </label>
+            <input type="number" name="valor" step="0.01" required>
+
+            <label for="moeda_origem">De:</label>
+            <select name="moeda_origem">
+                <option value="BRL">Real (BRL)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="USD">Dólar (USD)</option>
+            </select>
+
+            <label for="moeda_destino">Para:</label>
+            <select name="moeda_destino">
+                <option value="BRL">Real (BRL)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="USD">Dólar (USD)</option>
+            </select>
+
+            <button type="submit">Conveter</button>
+        </form>
+        <img src="../static/img/cat-hugging.gif" alt="">
+    </section>
+</body>
+</html>
