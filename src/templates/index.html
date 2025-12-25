@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=], initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Moedas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -30,7 +30,14 @@
 
             <button type="submit">Conveter</button>
         </form>
-        <img src="../static/img/cat-hugging.gif" alt="">
+        {% if resultado %}
+            <div class="resultado-box">
+                <h3>{{ valor_original }} {{ moeda_origem }} equivale a {{ resultado }} {{ moeda_destino }}</h3>
+            </div>
+        {% endif %}
+        <div style="text-align: center;">
+            <img src="{{ url_for('static', filename='img/' ~ imagem) }}" alt="Gato">
+        </div>
     </section>
 </body>
 </html>
